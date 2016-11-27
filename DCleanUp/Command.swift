@@ -18,15 +18,24 @@ enum CommandType: CommandExtention  {
     case CheckDiskVolume, Purge
     
     var path: String {
-        return ""
+        switch self {
+        case .CheckDiskVolume: return "~/"
+        case .Purge: return ""
+        }
     }
     
     var directoryPath: String {
-        return ""
+        switch self {
+        case .CheckDiskVolume: return "~/"
+        case .Purge: return ""
+        }
     }
     
     var scriptFileName: String {
-        return ""
+        switch self {
+        case .CheckDiskVolume: return "CheckDiskVolume"
+        case .Purge: return ""
+        }
     }
     
     
@@ -50,7 +59,7 @@ class Command {
 //        let script = "do shell script \"\(type.rawValue)\" with administrator privileges";
 //        NSAppleScript(source: script)!.executeAndReturnError(nil)
 //        print(script)
-        if let path = Bundle.main.path(forResource: "ls", ofType:"scpt") {
+        if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
             let task = Process()
             task.launchPath = "/usr/bin/osascript"
             task.currentDirectoryPath = type.directoryPath
