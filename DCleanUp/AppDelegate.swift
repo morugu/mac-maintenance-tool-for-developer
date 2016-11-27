@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        print(Command.execute(type: .Env))
+        print(Command.execute(type: .CheckDiskVolume))
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

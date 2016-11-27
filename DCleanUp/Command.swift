@@ -8,13 +8,35 @@
 
 import Cocoa
 
-enum CommandType: String {
-    case
-    Env = "/usr/bin/env",
-    Purge = "/usr/sbin/purge",
-    DeleteDerivedData = " rm -rf ~/Library/Developer/Xcode/DerivedData",
-    DeleteArchives = "rm -rf ~/Library/Developer/Xcode/Archives",
-    DeleteCaches = "rm -rf ~/Library/Caches"
+protocol CommandExtention {
+    var path: String { get }
+    var directoryPath: String { get }
+    var scriptFileName: String { get }
+}
+
+enum CommandType: CommandExtention  {
+    case CheckDiskVolume, Purge
+    
+    var path: String {
+        return ""
+    }
+    
+    var directoryPath: String {
+        return ""
+    }
+    
+    var scriptFileName: String {
+        return ""
+    }
+    
+    
+//    case
+//    Env = "/usr/bin/env",
+//    Purge = "/usr/sbin/purge",
+//    DeleteDerivedData = " rm -rf ~/Library/Developer/Xcode/DerivedData",
+//    DeleteArchives = "rm -rf ~/Library/Developer/Xcode/Archives",
+//    DeleteCaches = "rm -rf ~/Library/Caches",
+//    Ls = "/bin/ls"
 }
 
 class Command {
@@ -22,14 +44,23 @@ class Command {
     static let BasePath = "/usr/bin/"
     
     static func execute(type: CommandType) -> Int {
-        print(type.rawValue)
+//        print(type.rawValue)
         
-        // TODO: http://stackoverflow.com/questions/26707557/how-to-execute-a-shell-command-with-root-permission-from-swift
-        NSAppleScript(source: "do shell script \"sudo env\" with administrator " +
-            "privileges")!.executeAndReturnError(nil)
+//         TODO: http://stackoverflow.com/questions/26707557/how-to-execute-a-shell-command-with-root-permission-from-swift
+//        let script = "do shell script \"\(type.rawValue)\" with administrator privileges";
+//        NSAppleScript(source: script)!.executeAndReturnError(nil)
+//        print(script)
+        if let path = Bundle.main.path(forResource: "ls", ofType:"scpt") {
+            let task = Process()
+            task.launchPath = "/usr/bin/osascript"
+            task.currentDirectoryPath = type.directoryPath
+            task.arguments = [path]
+            task.launch()
+        }
         
 //        let task = Process()
 //        task.launchPath = type.rawValue
+//        task.currentDirectoryPath = "~/Desktop/SpotifyTimer 2016-11-13 16-38-52"
 //        task.launch()
 //        task.waitUntilExit()
 //        return Int(task.terminationStatus)
