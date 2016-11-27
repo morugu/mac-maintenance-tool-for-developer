@@ -11,6 +11,7 @@
 		C652C7D61DDF30450056CE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C652C7D51DDF30450056CE2E /* ViewController.swift */; };
 		C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D71DDF30450056CE2E /* Assets.xcassets */; };
 		C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D91DDF30450056CE2E /* Main.storyboard */; };
+		C67727031DEB0E69003F70EE /* ls.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727021DEB0E69003F70EE /* ls.scpt */; };
 		C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A4116D1DE5D4BD0003916B /* Command.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		C652C7D71DDF30450056CE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C652C7DA1DDF30450056CE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C652C7DC1DDF30450056CE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C67727021DEB0E69003F70EE /* ls.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ls.scpt; sourceTree = "<group>"; };
 		C6A4116D1DE5D4BD0003916B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +56,7 @@
 		C652C7D21DDF30450056CE2E /* DCleanUp */ = {
 			isa = PBXGroup;
 			children = (
+				C67727021DEB0E69003F70EE /* ls.scpt */,
 				C652C7D31DDF30450056CE2E /* AppDelegate.swift */,
 				C652C7D51DDF30450056CE2E /* ViewController.swift */,
 				C652C7D71DDF30450056CE2E /* Assets.xcassets */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67727031DEB0E69003F70EE /* ls.scpt in Resources */,
 				C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */,
 				C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */,
 			);
