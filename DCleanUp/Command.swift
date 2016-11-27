@@ -20,21 +20,21 @@ enum CommandType: CommandExtention  {
     var path: String {
         switch self {
         case .CheckDiskVolume: return "~/"
-        case .Purge: return ""
+        case .Purge: return "|/"
         }
     }
     
     var directoryPath: String {
         switch self {
         case .CheckDiskVolume: return "~/"
-        case .Purge: return ""
+        case .Purge: return "~/"
         }
     }
     
     var scriptFileName: String {
         switch self {
         case .CheckDiskVolume: return "CheckDiskVolume"
-        case .Purge: return ""
+        case .Purge: return "Purge"
         }
     }
     

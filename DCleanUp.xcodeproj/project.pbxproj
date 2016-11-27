@@ -13,6 +13,7 @@
 		C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D91DDF30450056CE2E /* Main.storyboard */; };
 		C67727031DEB0E69003F70EE /* ls.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727021DEB0E69003F70EE /* ls.scpt */; };
 		C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */; };
+		C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727071DEB1F4C003F70EE /* Purge.scpt */; };
 		C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A4116D1DE5D4BD0003916B /* Command.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		C652C7DC1DDF30450056CE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67727021DEB0E69003F70EE /* ls.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ls.scpt; sourceTree = "<group>"; };
 		C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = CheckDiskVolume.scpt; sourceTree = "<group>"; };
+		C67727071DEB1F4C003F70EE /* Purge.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge.scpt; sourceTree = "<group>"; };
 		C6A4116D1DE5D4BD0003916B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 		C67727041DEB1D4D003F70EE /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				C67727071DEB1F4C003F70EE /* Purge.scpt */,
 				C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */,
 			);
 			name = Scripts;
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C67727031DEB0E69003F70EE /* ls.scpt in Resources */,
+				C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */,
 				C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */,
 				C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */,
 				C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */,
