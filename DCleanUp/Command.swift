@@ -15,12 +15,13 @@ protocol CommandExtention {
 }
 
 enum CommandType: CommandExtention  {
-    case CheckDiskVolume, Purge
+    case CheckDiskVolume, Purge, UpdateDyldSharedCache
     
     var path: String {
         switch self {
         case .CheckDiskVolume: return "~/"
-        case .Purge: return "|/"
+        case .Purge: return "~/"
+        case .UpdateDyldSharedCache: return "~/"
         }
     }
     
@@ -28,6 +29,7 @@ enum CommandType: CommandExtention  {
         switch self {
         case .CheckDiskVolume: return "~/"
         case .Purge: return "~/"
+        case .UpdateDyldSharedCache: return "~/"
         }
     }
     
@@ -35,6 +37,7 @@ enum CommandType: CommandExtention  {
         switch self {
         case .CheckDiskVolume: return "CheckDiskVolume"
         case .Purge: return "Purge"
+        case .UpdateDyldSharedCache: return "UpdateDyldSharedCache"
         }
     }
     
