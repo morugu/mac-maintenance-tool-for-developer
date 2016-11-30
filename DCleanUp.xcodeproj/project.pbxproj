@@ -15,6 +15,8 @@
 		C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727071DEB1F4C003F70EE /* Purge.scpt */; };
 		C6806D871DEC728F0045C697 /* UpdateDyldSharedCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6806D861DEC728F0045C697 /* UpdateDyldSharedCache.scpt */; };
 		C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A4116D1DE5D4BD0003916B /* Command.swift */; };
+		C6B9EF5C1DEF139400FFFCF9 /* ClearKextcache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */; };
+		C6B9EF5E1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C67727071DEB1F4C003F70EE /* Purge.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge.scpt; sourceTree = "<group>"; };
 		C6806D861DEC728F0045C697 /* UpdateDyldSharedCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpdateDyldSharedCache.scpt; sourceTree = "<group>"; };
 		C6A4116D1DE5D4BD0003916B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClearKextcache.scpt; sourceTree = "<group>"; };
+		C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpdateKernelCache.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +78,11 @@
 		C67727041DEB1D4D003F70EE /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */,
 				C6806D861DEC728F0045C697 /* UpdateDyldSharedCache.scpt */,
 				C67727071DEB1F4C003F70EE /* Purge.scpt */,
 				C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */,
+				C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B9EF5C1DEF139400FFFCF9 /* ClearKextcache.scpt in Resources */,
 				C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */,
 				C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */,
 				C6806D871DEC728F0045C697 /* UpdateDyldSharedCache.scpt in Resources */,
 				C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */,
+				C6B9EF5E1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt in Resources */,
 				C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
