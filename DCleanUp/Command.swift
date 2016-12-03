@@ -15,13 +15,17 @@ protocol CommandExtention {
 }
 
 enum CommandType: CommandExtention  {
-    case CheckDiskVolume, Purge, UpdateDyldSharedCache
+    case CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData
     
     var path: String {
         switch self {
         case .CheckDiskVolume: return "~/"
         case .Purge: return "~/"
         case .UpdateDyldSharedCache: return "~/"
+        case .LL: return "~/"
+        case .DeleteArchives: return "~/"
+        case .DeleteCaches: return "~/"
+        case .DeleteDerivedData: return "~/"
         }
     }
     
@@ -30,6 +34,10 @@ enum CommandType: CommandExtention  {
         case .CheckDiskVolume: return "~/"
         case .Purge: return "~/"
         case .UpdateDyldSharedCache: return "~/"
+        case .LL: return "~/"
+        case .DeleteArchives: return "~/"
+        case .DeleteCaches: return "~/"
+        case .DeleteDerivedData: return "~/"
         }
     }
     
@@ -38,17 +46,12 @@ enum CommandType: CommandExtention  {
         case .CheckDiskVolume: return "CheckDiskVolume"
         case .Purge: return "Purge"
         case .UpdateDyldSharedCache: return "UpdateDyldSharedCache"
+        case .LL: return "LL"
+        case .DeleteArchives: return "DeleteArchives"
+        case .DeleteCaches: return "DeleteCaches"
+        case .DeleteDerivedData: return "DeleteDerivedData"
         }
     }
-    
-    
-//    case
-//    Env = "/usr/bin/env",
-//    Purge = "/usr/sbin/purge",
-//    DeleteDerivedData = " rm -rf ~/Library/Developer/Xcode/DerivedData",
-//    DeleteArchives = "rm -rf ~/Library/Developer/Xcode/Archives",
-//    DeleteCaches = "rm -rf ~/Library/Caches",
-//    Ls = "/bin/ls"
 }
 
 class Command {
