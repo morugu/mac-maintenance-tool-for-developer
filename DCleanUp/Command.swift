@@ -17,6 +17,8 @@ protocol CommandExtention {
 enum CommandType: CommandExtention  {
     case CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData
     
+    static let allValues = [CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData]
+    
     var path: String {
         switch self {
         case .CheckDiskVolume: return "~/"
