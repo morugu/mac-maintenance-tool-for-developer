@@ -9,10 +9,13 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet weak var commandLabel: NSTextField!
+    @IBOutlet weak var commandSelectButton: NSPopUpButton!
+    @IBOutlet weak var executeCommandButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
