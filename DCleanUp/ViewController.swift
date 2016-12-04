@@ -16,7 +16,14 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setDefaultSelectCommandsTitle()
+    }
+    
+    func setDefaultSelectCommandsTitle() {
+        commandSelectButton.removeAllItems()
+        for value in CommandType.allValues {
+            commandSelectButton.addItem(withTitle: value.scriptFileName)
+        }
     }
 
     override var representedObject: Any? {
