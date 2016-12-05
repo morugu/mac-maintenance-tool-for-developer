@@ -9,8 +9,7 @@
 import Cocoa
 
 protocol CommandExtention {
-    var path: String { get }
-    var directoryPath: String { get }
+    var script: String { get }
     var scriptFileName: String { get }
 }
 
@@ -19,30 +18,18 @@ enum CommandType: CommandExtention  {
     
     static let allValues = [CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData]
     
-    var path: String {
+    var script: String {
         switch self {
-        case .CheckDiskVolume: return "~/"
-        case .Purge: return "~/"
-        case .UpdateDyldSharedCache: return "~/"
-        case .LL: return "~/"
-        case .DeleteArchives: return "~/"
-        case .DeleteCaches: return "~/"
-        case .DeleteDerivedData: return "~/"
+        case .CheckDiskVolume: return "df -h"
+        case .Purge: return "sudo purge"
+        case .UpdateDyldSharedCache: return "sudo update_dyld_shared_cache -force "
+        case .LL: return "ls -l"
+        case .DeleteArchives: return "sudo rm -rf ~/Library/Developer/Xcode/Archives"
+        case .DeleteCaches: return "sudo rm -rf ~/Library/Caches"
+        case .DeleteDerivedData: return "sudo rm -rf ~/Library/Developer/Xcode/DerivedData"
         }
     }
-    
-    var directoryPath: String {
-        switch self {
-        case .CheckDiskVolume: return "~/"
-        case .Purge: return "~/"
-        case .UpdateDyldSharedCache: return "~/"
-        case .LL: return "~/"
-        case .DeleteArchives: return "~/"
-        case .DeleteCaches: return "~/"
-        case .DeleteDerivedData: return "~/"
-        }
-    }
-    
+
     var scriptFileName: String {
         switch self {
         case .CheckDiskVolume: return "CheckDiskVolume"
@@ -70,7 +57,6 @@ class Command {
         if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
             let task = Process()
             task.launchPath = "/usr/bin/osascript"
-            task.currentDirectoryPath = type.directoryPath
             task.arguments = [path]
             task.launch()
         }

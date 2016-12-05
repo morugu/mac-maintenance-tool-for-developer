@@ -34,11 +34,13 @@ class ViewController: NSViewController {
     }
     
     func setLabelText() {
-        let text = getSelectedCommand().scriptFileName
+        let text = getSelectedCommand().script
         commandLabel.stringValue = text
     }
     
     func excuteCommand() {
+        // 誤って実行しないためにコメントアウトしておく
+        /*
         let commandType = getSelectedCommand()
         let result = Command.execute(type: commandType)
         if result == 0 {
@@ -46,6 +48,7 @@ class ViewController: NSViewController {
         } else {
             print("fail")
         }
+        */
     }
     
     func getSelectedCommand() -> CommandType {
