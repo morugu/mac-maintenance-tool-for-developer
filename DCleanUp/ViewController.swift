@@ -23,6 +23,7 @@ class ViewController: NSViewController {
         setDefaultSelectCommandsTitle()
         commandSelectButton.action = #selector(setLabelText)
         setLabelText()
+        executeCommandButton.action = #selector(excuteCommand)
     }
     
     func setDefaultSelectCommandsTitle() {
@@ -33,9 +34,22 @@ class ViewController: NSViewController {
     }
     
     func setLabelText() {
-        let text = CommandType.allValues[commandSelectButton.indexOfSelectedItem].scriptFileName
+        let text = getSelectedCommand().scriptFileName
         commandLabel.stringValue = text
     }
     
+    func excuteCommand() {
+        let commandType = getSelectedCommand()
+        let result = Command.execute(type: commandType)
+        if result == 0 {
+            print("success")
+        } else {
+            print("fail")
+        }
+    }
+    
+    func getSelectedCommand() -> CommandType {
+        return CommandType.allValues[commandSelectButton.indexOfSelectedItem]
+    }
 }
 

@@ -75,10 +75,10 @@
 				C67727041DEB1D4D003F70EE /* Scripts */,
 				C652C7D31DDF30450056CE2E /* AppDelegate.swift */,
 				C652C7D51DDF30450056CE2E /* ViewController.swift */,
+				C6A4116D1DE5D4BD0003916B /* Command.swift */,
 				C652C7D71DDF30450056CE2E /* Assets.xcassets */,
 				C652C7D91DDF30450056CE2E /* Main.storyboard */,
 				C652C7DC1DDF30450056CE2E /* Info.plist */,
-				C6A4116D1DE5D4BD0003916B /* Command.swift */,
 			);
 			path = DCleanUp;
 			sourceTree = "<group>";
