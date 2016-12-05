@@ -16,7 +16,13 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
         setDefaultSelectCommandsTitle()
+        commandSelectButton.action = #selector(setLabelText)
+        setLabelText()
     }
     
     func setDefaultSelectCommandsTitle() {
@@ -25,11 +31,11 @@ class ViewController: NSViewController {
             commandSelectButton.addItem(withTitle: value.scriptFileName)
         }
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    
+    func setLabelText() {
+        let text = CommandType.allValues[commandSelectButton.indexOfSelectedItem].scriptFileName
+        commandLabel.stringValue = text
     }
+    
 }
 
