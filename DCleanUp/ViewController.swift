@@ -21,9 +21,9 @@ class ViewController: NSViewController {
     
     func setup() {
         setDefaultSelectCommandsTitle()
-        commandSelectButton.action = #selector(setLabelText)
         setLabelText()
-        executeCommandButton.action = #selector(showConfirmAlert)
+        commandSelectButton.action = #selector(setLabelText)
+        executeCommandButton.action = #selector(tapExecuteButton)
     }
     
     func setDefaultSelectCommandsTitle() {
@@ -42,17 +42,6 @@ class ViewController: NSViewController {
         showConfirmAlert()
     }
     
-    func excuteCommand() {
-        // 誤って実行しないためにコメントアウトしておく
-        let commandType = getSelectedCommand()
-        let result = Command.execute(type: commandType)
-        if result == 0 {
-            print("success")
-        } else {
-            print("fail")
-        }
-    }
-    
     func showConfirmAlert() {
         let alert: NSAlert = NSAlert()
         alert.addButton(withTitle: "OK")
@@ -66,6 +55,16 @@ class ViewController: NSViewController {
             print("ok")
         } else {
             print("cancel")
+        }
+    }
+    
+    func excuteCommand() {
+        let commandType = getSelectedCommand()
+        let result = Command.execute(type: commandType)
+        if result == 0 {
+            print("success")
+        } else {
+            print("fail")
         }
     }
     
