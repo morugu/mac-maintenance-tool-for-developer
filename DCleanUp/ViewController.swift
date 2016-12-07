@@ -24,6 +24,7 @@ class ViewController: NSViewController {
         setLabelText()
         commandSelectButton.action = #selector(setLabelText)
         executeCommandButton.action = #selector(tapExecuteButton)
+        executeCommandButton.title = NSLocalizedString("EXECUTE", comment: "execute")
     }
     
     func setDefaultSelectCommandsTitle() {

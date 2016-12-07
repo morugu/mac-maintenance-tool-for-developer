@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  DCleanUp
+
+  Created by shoya on 2016/12/08.
+  Copyright © 2016 Shoya Shiraki. All rights reserved.
+*/
+
+"CONFIRM_MESSAGE" = "コマンドを実行しますか？";
+"ALERT_OK" = "実行";
+"ALERT_CANCEL" = "キャンセル";
+"EXECUTE" = "実行";

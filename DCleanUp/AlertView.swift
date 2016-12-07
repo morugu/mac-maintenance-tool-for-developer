@@ -12,9 +12,9 @@ class AlertView: NSAlert {
     
     override init() {
         super.init()
-        addButton(withTitle: "OK")
-        addButton(withTitle: "Cancel")
+        addButton(withTitle: NSLocalizedString("ALERT_OK", comment: "ok"))
+        addButton(withTitle: NSLocalizedString("ALERT_CANCEL", comment: "cancel"))
         alertStyle = .informational
-        messageText = "Are you sure you want to execute following command?"
+        messageText = NSLocalizedString("CONFIRM_MESSAGE", comment: "confirm message")
     }
 }

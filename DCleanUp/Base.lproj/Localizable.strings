@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  DCleanUp
+
+  Created by shoya on 2016/12/08.
+  Copyright © 2016 Shoya Shiraki. All rights reserved.
+*/
+
+"CONFIRM_MESSAGE" = "Are you sure you want to execute following command?";
+"ALERT_OK" = "OK";
+"ALERT_CANCEL" = "Cancel";
+"EXECUTE" = "Run";
