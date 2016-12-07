@@ -21,6 +21,7 @@
 		C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A4116D1DE5D4BD0003916B /* Command.swift */; };
 		C6B9EF5C1DEF139400FFFCF9 /* ClearKextcache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */; };
 		C6B9EF5E1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */; };
+		C6CCE09F1DF8C25F00706010 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CCE09E1DF8C25F00706010 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C6A4116D1DE5D4BD0003916B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClearKextcache.scpt; sourceTree = "<group>"; };
 		C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpdateKernelCache.scpt; sourceTree = "<group>"; };
+		C6CCE09E1DF8C25F00706010 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				C652C7D71DDF30450056CE2E /* Assets.xcassets */,
 				C652C7D91DDF30450056CE2E /* Main.storyboard */,
 				C652C7DC1DDF30450056CE2E /* Info.plist */,
+				C6CCE09E1DF8C25F00706010 /* AlertView.swift */,
 			);
 			path = DCleanUp;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C652C7D61DDF30450056CE2E /* ViewController.swift in Sources */,
+				C6CCE09F1DF8C25F00706010 /* AlertView.swift in Sources */,
 				C652C7D41DDF30450056CE2E /* AppDelegate.swift in Sources */,
 				C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */,
 			);

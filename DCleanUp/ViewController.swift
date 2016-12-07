@@ -43,11 +43,7 @@ class ViewController: NSViewController {
     }
     
     func showConfirmAlert() {
-        let alert: NSAlert = NSAlert()
-        alert.addButton(withTitle: "OK")
-        alert.addButton(withTitle: "Cancel")
-        alert.alertStyle = .informational
-        alert.messageText = "Are you sure you want to execute following command?"
+        let alert: NSAlert = AlertView()
         alert.informativeText = getSelectedCommand().script
         let reulst = alert.runModal()
         if reulst == NSAlertFirstButtonReturn {
