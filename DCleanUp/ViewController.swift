@@ -30,7 +30,7 @@ class ViewController: NSViewController {
     func setDefaultSelectCommandsTitle() {
         commandSelectButton.removeAllItems()
         for value in CommandType.allValues {
-            commandSelectButton.addItem(withTitle: value.scriptFileName)
+            commandSelectButton.addItem(withTitle: value.scriptTitle)
         }
     }
     

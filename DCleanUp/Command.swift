@@ -11,19 +11,19 @@ import Cocoa
 protocol CommandExtention {
     var script: String { get }
     var scriptFileName: String { get }
+    var scriptTitle: String { get }
 }
 
 enum CommandType: CommandExtention  {
-    case CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData
+    case Purge, UpdateDyldSharedCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache
     
-    static let allValues = [CheckDiskVolume, Purge, UpdateDyldSharedCache, LL, DeleteArchives, DeleteCaches, DeleteDerivedData]
+    static let allValues = [Purge, UpdateDyldSharedCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache]
     
     var script: String {
         switch self {
-        case .CheckDiskVolume: return "df -h"
         case .Purge: return "sudo purge"
         case .UpdateDyldSharedCache: return "sudo update_dyld_shared_cache -force "
-        case .LL: return "ls -l"
+        case .PurgeKernelExtensionCache: return "sudo kextcache -system-caches"
         case .DeleteArchives: return "sudo rm -rf ~/Library/Developer/Xcode/Archives"
         case .DeleteCaches: return "sudo rm -rf ~/Library/Caches"
         case .DeleteDerivedData: return "sudo rm -rf ~/Library/Developer/Xcode/DerivedData"
@@ -32,13 +32,23 @@ enum CommandType: CommandExtention  {
 
     var scriptFileName: String {
         switch self {
-        case .CheckDiskVolume: return "CheckDiskVolume"
         case .Purge: return "Purge"
         case .UpdateDyldSharedCache: return "UpdateDyldSharedCache"
-        case .LL: return "LL"
+        case .PurgeKernelExtensionCache: return "PurgeKernelExtensionCache"
         case .DeleteArchives: return "DeleteArchives"
         case .DeleteCaches: return "DeleteCaches"
         case .DeleteDerivedData: return "DeleteDerivedData"
+        }
+    }
+    
+    var scriptTitle: String {
+        switch self {
+        case .Purge: return NSLocalizedString("Purge", comment: "")
+        case .UpdateDyldSharedCache: return NSLocalizedString("UpdateDyldSharedCache", comment: "")
+        case .PurgeKernelExtensionCache: return NSLocalizedString("PurgeKernelExtensionCache", comment: "")
+        case .DeleteArchives: return NSLocalizedString("DeleteArchives", comment: "")
+        case .DeleteCaches: return NSLocalizedString("DeleteCaches", comment: "")
+        case .DeleteDerivedData: return NSLocalizedString("DeleteDerivedData", comment: "")
         }
     }
 }

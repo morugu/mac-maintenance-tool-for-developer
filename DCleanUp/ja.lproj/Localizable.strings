@@ -10,3 +10,10 @@
 "ALERT_OK" = "実行";
 "ALERT_CANCEL" = "キャンセル";
 "EXECUTE" = "実行";
+
+"Purge" = "メモリ開放";
+"UpdateDyldSharedCache" = "アプリとOSのキャッシュのアップデート";
+"PurgeKernelExtensionCache" = "カーネルエクステンションキャッシュのクリア";
+"DeleteArchives" = "アーカイブの削除";
+"DeleteCaches" = "キャッシュの削除";
+"DeleteDerivedData" = "ビルド情報の削除";

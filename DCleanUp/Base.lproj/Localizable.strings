@@ -10,3 +10,10 @@
 "ALERT_OK" = "OK";
 "ALERT_CANCEL" = "Cancel";
 "EXECUTE" = "Run";
+
+"Purge" = "Purge Memory";
+"UpdateDyldSharedCache" = "Update Dyld Shared Cache";
+"PurgeKernelExtensionCache" = "Purge Mac Kernel Extension Cache";
+"DeleteArchives" = "Delete Archives";
+"DeleteCaches" = "Delete Caches";
+"DeleteDerivedData" = "Delete Derived Data";

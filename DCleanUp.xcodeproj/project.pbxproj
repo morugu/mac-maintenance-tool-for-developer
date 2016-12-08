@@ -15,6 +15,7 @@
 		C652C7D61DDF30450056CE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C652C7D51DDF30450056CE2E /* ViewController.swift */; };
 		C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D71DDF30450056CE2E /* Assets.xcassets */; };
 		C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D91DDF30450056CE2E /* Main.storyboard */; };
+		C66F12AC1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C66F12AB1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt */; };
 		C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */; };
 		C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727071DEB1F4C003F70EE /* Purge.scpt */; };
 		C6806D871DEC728F0045C697 /* UpdateDyldSharedCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6806D861DEC728F0045C697 /* UpdateDyldSharedCache.scpt */; };
@@ -36,6 +37,7 @@
 		C652C7D71DDF30450056CE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C652C7DA1DDF30450056CE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C652C7DC1DDF30450056CE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66F12AB1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = PurgeKernelExtensionCache.scpt; sourceTree = "<group>"; };
 		C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = CheckDiskVolume.scpt; sourceTree = "<group>"; };
 		C67727071DEB1F4C003F70EE /* Purge.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge.scpt; sourceTree = "<group>"; };
 		C6806D861DEC728F0045C697 /* UpdateDyldSharedCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpdateDyldSharedCache.scpt; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		C67727041DEB1D4D003F70EE /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				C66F12AB1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt */,
 				C64EB9551DF2F66B00802D15 /* DeleteArchives.scpt */,
 				C64EB9561DF2F66B00802D15 /* DeleteCaches.scpt */,
 				C64EB9571DF2F66B00802D15 /* DeleteDerivedData.scpt */,
@@ -174,6 +177,7 @@
 				C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */,
 				C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */,
 				C6806D871DEC728F0045C697 /* UpdateDyldSharedCache.scpt in Resources */,
+				C66F12AC1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt in Resources */,
 				C64EB95A1DF2F66B00802D15 /* DeleteDerivedData.scpt in Resources */,
 				C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */,
 				C64EB9591DF2F66B00802D15 /* DeleteCaches.scpt in Resources */,
