@@ -27,6 +27,14 @@ class ViewController: NSViewController {
         executeCommandButton.title = NSLocalizedString("EXECUTE", comment: "execute")
     }
     
+    override func viewWillAppear() {
+        self.view.layer?.backgroundColor = NSColor(red:0.16, green:0.16, blue:0.16, alpha:1.0).cgColor
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.isMovableByWindowBackground = true
+        self.view.window?.titleVisibility = NSWindowTitleVisibility.hidden
+        self.view.window?.backgroundColor = NSColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
+    }
+    
     func setDefaultSelectCommandsTitle() {
         commandSelectButton.removeAllItems()
         for value in CommandType.allValues {
@@ -37,6 +45,7 @@ class ViewController: NSViewController {
     func setLabelText() {
         let text = getSelectedCommand().script
         commandLabel.stringValue = text
+        commandLabel.textColor = NSColor.white
     }
     
     func tapExecuteButton() {
