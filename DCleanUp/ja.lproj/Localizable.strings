@@ -10,6 +10,8 @@
 "ALERT_OK" = "実行";
 "ALERT_CANCEL" = "キャンセル";
 "EXECUTE" = "実行";
+"FINISH_MESSAGE" = "処理が完了しました";
+"ALERT_CLOSE" = "閉じる";
 
 "Purge" = "メモリ開放";
 "UpdateDyldSharedCache" = "アプリとOSのキャッシュのアップデート";

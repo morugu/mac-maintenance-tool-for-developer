@@ -15,6 +15,7 @@
 		C652C7D61DDF30450056CE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C652C7D51DDF30450056CE2E /* ViewController.swift */; };
 		C652C7D81DDF30450056CE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D71DDF30450056CE2E /* Assets.xcassets */; };
 		C652C7DB1DDF30450056CE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C652C7D91DDF30450056CE2E /* Main.storyboard */; };
+		C66A8D801DFD3D5A001EB913 /* FinishAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66A8D7F1DFD3D5A001EB913 /* FinishAlertView.swift */; };
 		C66F12AC1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C66F12AB1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt */; };
 		C67727061DEB1D5B003F70EE /* CheckDiskVolume.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */; };
 		C67727081DEB1F4C003F70EE /* Purge.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C67727071DEB1F4C003F70EE /* Purge.scpt */; };
@@ -22,7 +23,7 @@
 		C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A4116D1DE5D4BD0003916B /* Command.swift */; };
 		C6B9EF5C1DEF139400FFFCF9 /* ClearKextcache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */; };
 		C6B9EF5E1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */; };
-		C6CCE09F1DF8C25F00706010 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CCE09E1DF8C25F00706010 /* AlertView.swift */; };
+		C6CCE09F1DF8C25F00706010 /* ConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CCE09E1DF8C25F00706010 /* ConfirmAlertView.swift */; };
 		C6CCE0A31DF8C54C00706010 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6CCE0A51DF8C54C00706010 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		C652C7D71DDF30450056CE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C652C7DA1DDF30450056CE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C652C7DC1DDF30450056CE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66A8D7F1DFD3D5A001EB913 /* FinishAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishAlertView.swift; sourceTree = "<group>"; };
 		C66F12AB1DFA1A460002BE38 /* PurgeKernelExtensionCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = PurgeKernelExtensionCache.scpt; sourceTree = "<group>"; };
 		C67727051DEB1D5B003F70EE /* CheckDiskVolume.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = CheckDiskVolume.scpt; sourceTree = "<group>"; };
 		C67727071DEB1F4C003F70EE /* Purge.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge.scpt; sourceTree = "<group>"; };
@@ -44,7 +46,7 @@
 		C6A4116D1DE5D4BD0003916B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C6B9EF5B1DEF139400FFFCF9 /* ClearKextcache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClearKextcache.scpt; sourceTree = "<group>"; };
 		C6B9EF5D1DEF13CF00FFFCF9 /* UpdateKernelCache.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = UpdateKernelCache.scpt; sourceTree = "<group>"; };
-		C6CCE09E1DF8C25F00706010 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		C6CCE09E1DF8C25F00706010 /* ConfirmAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAlertView.swift; sourceTree = "<group>"; };
 		C6CCE0A01DF8C4C500706010 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		C6CCE0A41DF8C54C00706010 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6CCE0A61DF8C54F00706010 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -88,7 +90,8 @@
 				C652C7D71DDF30450056CE2E /* Assets.xcassets */,
 				C652C7D91DDF30450056CE2E /* Main.storyboard */,
 				C652C7DC1DDF30450056CE2E /* Info.plist */,
-				C6CCE09E1DF8C25F00706010 /* AlertView.swift */,
+				C6CCE09E1DF8C25F00706010 /* ConfirmAlertView.swift */,
+				C66A8D7F1DFD3D5A001EB913 /* FinishAlertView.swift */,
 				C6CCE0A51DF8C54C00706010 /* Localizable.strings */,
 			);
 			path = DCleanUp;
@@ -196,7 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C652C7D61DDF30450056CE2E /* ViewController.swift in Sources */,
-				C6CCE09F1DF8C25F00706010 /* AlertView.swift in Sources */,
+				C6CCE09F1DF8C25F00706010 /* ConfirmAlertView.swift in Sources */,
+				C66A8D801DFD3D5A001EB913 /* FinishAlertView.swift in Sources */,
 				C652C7D41DDF30450056CE2E /* AppDelegate.swift in Sources */,
 				C6A4116E1DE5D4BD0003916B /* Command.swift in Sources */,
 			);

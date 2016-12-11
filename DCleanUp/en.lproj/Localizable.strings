@@ -10,6 +10,8 @@
 "ALERT_OK" = "OK";
 "ALERT_CANCEL" = "Cancel";
 "EXECUTE" = "Run";
+"FINISH_MESSAGE" = "Complete!";
+"ALERT_CLOSE" = "Close";
 
 "Purge" = "Purge Memory";
 "UpdateDyldSharedCache" = "Update Dyld Shared Cache";

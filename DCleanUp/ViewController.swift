@@ -53,7 +53,7 @@ class ViewController: NSViewController {
     }
     
     func showConfirmAlert() {
-        let alert: NSAlert = AlertView()
+        let alert: NSAlert = ConfirmAlertView()
         alert.informativeText = getSelectedCommand().script
         let reulst = alert.runModal()
         if reulst == NSAlertFirstButtonReturn {
@@ -64,11 +64,17 @@ class ViewController: NSViewController {
         }
     }
     
+    func showFinishAlert() {
+        let alert: NSAlert = FinishAlertView()
+        alert.informativeText = getSelectedCommand().script
+        alert.runModal()
+    }
+    
     func excuteCommand() {
         let commandType = getSelectedCommand()
         let result = Command.execute(type: commandType)
         if result == 0 {
-            print("success")
+            showFinishAlert()
         } else {
             print("fail")
         }
