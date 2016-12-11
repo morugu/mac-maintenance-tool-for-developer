@@ -13,6 +13,7 @@
 
 "Purge" = "Purge Memory";
 "UpdateDyldSharedCache" = "Update Dyld Shared Cache";
+"UpdateKernelCache" = "Update Kernel Cache";
 "PurgeKernelExtensionCache" = "Purge Mac Kernel Extension Cache";
 "DeleteArchives" = "Delete Archives";
 "DeleteCaches" = "Delete Caches";

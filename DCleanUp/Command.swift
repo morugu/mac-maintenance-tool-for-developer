@@ -15,14 +15,15 @@ protocol CommandExtention {
 }
 
 enum CommandType: CommandExtention  {
-    case Purge, UpdateDyldSharedCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache
+    case Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache
     
-    static let allValues = [Purge, UpdateDyldSharedCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache]
+    static let allValues = [Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache]
     
     var script: String {
         switch self {
         case .Purge: return "sudo purge"
-        case .UpdateDyldSharedCache: return "sudo update_dyld_shared_cache -force "
+        case .UpdateDyldSharedCache: return "sudo update_dyld_shared_cache -force"
+        case .UpdateKernelCache: return "sudo kextcache -system-prelinked-kernel"
         case .PurgeKernelExtensionCache: return "sudo kextcache -system-caches"
         case .DeleteArchives: return "sudo rm -rf ~/Library/Developer/Xcode/Archives"
         case .DeleteCaches: return "sudo rm -rf ~/Library/Caches"
@@ -34,6 +35,7 @@ enum CommandType: CommandExtention  {
         switch self {
         case .Purge: return "Purge"
         case .UpdateDyldSharedCache: return "UpdateDyldSharedCache"
+        case .UpdateKernelCache: return "UpdateKernelCache"
         case .PurgeKernelExtensionCache: return "PurgeKernelExtensionCache"
         case .DeleteArchives: return "DeleteArchives"
         case .DeleteCaches: return "DeleteCaches"
@@ -45,6 +47,7 @@ enum CommandType: CommandExtention  {
         switch self {
         case .Purge: return NSLocalizedString("Purge", comment: "")
         case .UpdateDyldSharedCache: return NSLocalizedString("UpdateDyldSharedCache", comment: "")
+        case .UpdateKernelCache: return NSLocalizedString("UpdateKernelCache", comment: "")
         case .PurgeKernelExtensionCache: return NSLocalizedString("PurgeKernelExtensionCache", comment: "")
         case .DeleteArchives: return NSLocalizedString("DeleteArchives", comment: "")
         case .DeleteCaches: return NSLocalizedString("DeleteCaches", comment: "")
