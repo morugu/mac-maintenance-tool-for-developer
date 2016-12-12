@@ -19,20 +19,20 @@ class ViewController: NSViewController {
         setup()
     }
     
-    func setup() {
-        setDefaultSelectCommandsTitle()
-        setLabelText()
-        commandSelectButton.action = #selector(setLabelText)
-        executeCommandButton.action = #selector(tapExecuteButton)
-        executeCommandButton.title = NSLocalizedString("EXECUTE", comment: "execute")
-    }
-    
     override func viewWillAppear() {
         self.view.layer?.backgroundColor = NSColor(red:0.16, green:0.16, blue:0.16, alpha:1.0).cgColor
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.isMovableByWindowBackground = true
         self.view.window?.titleVisibility = NSWindowTitleVisibility.hidden
         self.view.window?.backgroundColor = NSColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
+    }
+    
+    func setup() {
+        setDefaultSelectCommandsTitle()
+        setLabelText()
+        commandSelectButton.action = #selector(setLabelText)
+        executeCommandButton.action = #selector(tapExecuteButton)
+        executeCommandButton.title = NSLocalizedString("EXECUTE", comment: "execute")
     }
     
     func setDefaultSelectCommandsTitle() {
@@ -58,9 +58,6 @@ class ViewController: NSViewController {
         let reulst = alert.runModal()
         if reulst == NSAlertFirstButtonReturn {
             excuteCommand()
-            print("ok")
-        } else {
-            print("cancel")
         }
     }
     
@@ -76,7 +73,7 @@ class ViewController: NSViewController {
         if result == 0 {
             showFinishAlert()
         } else {
-            print("fail")
+            // TODO: show erroe alert
         }
     }
     

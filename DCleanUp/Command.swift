@@ -8,14 +8,36 @@
 
 import Cocoa
 
+
+class Command {
+    static func execute(type: CommandType) -> Int {
+        if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
+            let task = Process()
+            task.launchPath = "/usr/bin/osascript"
+            task.arguments = [path]
+            task.launch()
+            task.waitUntilExit()
+            return Int(task.terminationStatus)
+        }
+        return 1
+    }
+}
+
 protocol CommandExtention {
     var script: String { get }
     var scriptFileName: String { get }
     var scriptTitle: String { get }
 }
 
-enum CommandType: CommandExtention  {
-    case Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache
+enum CommandType: CommandExtention {
+    
+    case Purge,
+    UpdateDyldSharedCache,
+    UpdateKernelCache,
+    DeleteArchives,
+    DeleteCaches,
+    DeleteDerivedData,
+    PurgeKernelExtensionCache
     
     static let allValues = [Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache]
     
@@ -53,20 +75,5 @@ enum CommandType: CommandExtention  {
         case .DeleteCaches: return NSLocalizedString("DeleteCaches", comment: "")
         case .DeleteDerivedData: return NSLocalizedString("DeleteDerivedData", comment: "")
         }
-    }
-}
-
-class Command {
-
-    static func execute(type: CommandType) -> Int {
-        if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
-            let task = Process()
-            task.launchPath = "/usr/bin/osascript"
-            task.arguments = [path]
-            task.launch()
-            task.waitUntilExit()
-            return Int(task.terminationStatus)
-        }
-        return 1
     }
 }
