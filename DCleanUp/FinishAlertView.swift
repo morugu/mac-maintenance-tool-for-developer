@@ -11,8 +11,7 @@ import Cocoa
 class FinishAlertView: NSAlert {
     override init() {
         super.init()
-        addButton(withTitle: NSLocalizedString("ALERT_CLOSE", comment: "ok"))
+        addButton(withTitle: NSLocalizedString("ALERT_CLOSE", comment: "close"))
         alertStyle = .informational
-        messageText = NSLocalizedString("FINISH_MESSAGE", comment: "finish message")
     }
 }

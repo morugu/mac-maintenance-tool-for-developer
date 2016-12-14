@@ -61,9 +61,15 @@ class ViewController: NSViewController {
         }
     }
     
-    func showFinishAlert() {
+    func showFinishAlert(success: Bool) {
         let alert: NSAlert = FinishAlertView()
         alert.informativeText = getSelectedCommand().script
+        if success {
+            alert.messageText = NSLocalizedString("FINISH_MESSAGE", comment: "finish message")
+        } else {
+            alert.messageText = NSLocalizedString("FINISH_ERROR", comment: "finish error message")        
+        }
+        
         alert.runModal()
     }
     
@@ -71,9 +77,9 @@ class ViewController: NSViewController {
         let commandType = getSelectedCommand()
         let result = Command.execute(type: commandType)
         if result == 0 {
-            showFinishAlert()
+            showFinishAlert(success: true)
         } else {
-            // TODO: show erroe alert
+            showFinishAlert(success: false)
         }
     }
     

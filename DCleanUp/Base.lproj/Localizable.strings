@@ -11,6 +11,7 @@
 "ALERT_CANCEL" = "Cancel";
 "EXECUTE" = "Run";
 "FINISH_MESSAGE" = "Complete!";
+"FINISH_ERROR" = "Command Failure. Please try again.";
 "ALERT_CLOSE" = "Close";
 
 "Purge" = "Purge Memory";

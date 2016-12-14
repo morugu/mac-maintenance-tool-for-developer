@@ -10,7 +10,8 @@
 "ALERT_OK" = "実行";
 "ALERT_CANCEL" = "キャンセル";
 "EXECUTE" = "実行";
-"FINISH_MESSAGE" = "処理が完了しました";
+"FINISH_MESSAGE" = "処理が正常に完了しました！";
+"FINISH_ERROR" = "処理が失敗しました。再度、お試しください。";
 "ALERT_CLOSE" = "閉じる";
 
 "Purge" = "メモリ開放";
