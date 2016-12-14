@@ -10,16 +10,28 @@ import Cocoa
 
 
 class Command {
-    static func execute(type: CommandType) -> Int {
+    func execute(type: CommandType) -> Int {
         if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
             let task = Process()
+            let pipe = Pipe()
+            task.standardOutput = pipe
+            NotificationCenter.default.addObserver(self, selector: #selector(readComplete), name: NSNotification.Name.NSFileHandleReadToEndOfFileCompletion, object: nil)
+            pipe.fileHandleForReading.readToEndOfFileInBackgroundAndNotify()
+            
             task.launchPath = "/usr/bin/osascript"
             task.arguments = [path]
             task.launch()
             task.waitUntilExit()
+            
+            print(Int(task.terminationStatus))
             return Int(task.terminationStatus)
         }
         return 1
+    }
+    
+    @objc func readComplete(notification: Notification) {
+        print(notification)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.NSFileHandleReadToEndOfFileCompletion, object: nil)
     }
 }
 
@@ -37,9 +49,11 @@ enum CommandType: CommandExtention {
     DeleteArchives,
     DeleteCaches,
     DeleteDerivedData,
-    PurgeKernelExtensionCache
+    PurgeKernelExtensionCache,
+    LL
     
-    static let allValues = [Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache]
+    
+    static let allValues = [Purge, UpdateDyldSharedCache, UpdateKernelCache, DeleteArchives, DeleteCaches, DeleteDerivedData, PurgeKernelExtensionCache, LL]
     
     var script: String {
         switch self {
@@ -50,6 +64,7 @@ enum CommandType: CommandExtention {
         case .DeleteArchives: return "sudo rm -rf ~/Library/Developer/Xcode/Archives"
         case .DeleteCaches: return "sudo rm -rf ~/Library/Caches"
         case .DeleteDerivedData: return "sudo rm -rf ~/Library/Developer/Xcode/DerivedData"
+        case .LL: return "LL"
         }
     }
 
@@ -62,6 +77,7 @@ enum CommandType: CommandExtention {
         case .DeleteArchives: return "DeleteArchives"
         case .DeleteCaches: return "DeleteCaches"
         case .DeleteDerivedData: return "DeleteDerivedData"
+        case .LL: return "LL"
         }
     }
     
@@ -74,6 +90,7 @@ enum CommandType: CommandExtention {
         case .DeleteArchives: return NSLocalizedString("DeleteArchives", comment: "")
         case .DeleteCaches: return NSLocalizedString("DeleteCaches", comment: "")
         case .DeleteDerivedData: return NSLocalizedString("DeleteDerivedData", comment: "")
+        case .LL: return "LL"
         }
     }
 }

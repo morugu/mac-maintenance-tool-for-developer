@@ -75,7 +75,7 @@ class ViewController: NSViewController {
     
     func excuteCommand() {
         let commandType = getSelectedCommand()
-        let result = Command.execute(type: commandType)
+        let result = Command().execute(type: commandType)
         if result == 0 {
             showFinishAlert(success: true)
         } else {
