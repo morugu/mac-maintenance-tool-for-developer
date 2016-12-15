@@ -86,5 +86,12 @@ class ViewController: NSViewController {
     func getSelectedCommand() -> CommandType {
         return CommandType.allValues[commandSelectButton.indexOfSelectedItem]
     }
+    
+    override func keyDown(with theEvent: NSEvent) {
+        if (theEvent.keyCode == 36) {
+            // press Enter key
+            showConfirmAlert()
+        }
+    }
 }
 
