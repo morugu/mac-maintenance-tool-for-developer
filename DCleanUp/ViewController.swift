@@ -57,7 +57,7 @@ class ViewController: NSViewController {
         alert.informativeText = getSelectedCommand().script
         let reulst = alert.runModal()
         if reulst == NSAlertFirstButtonReturn {
-            excuteCommand()
+            executeCommand()
         }
     }
     
@@ -73,7 +73,7 @@ class ViewController: NSViewController {
         alert.runModal()
     }
     
-    func excuteCommand() {
+    func executeCommand() {
         let commandType = getSelectedCommand()
         let result = Command().execute(type: commandType)
         if result == 0 {
