@@ -8,3 +8,4 @@ Mac maintenance tool for Developer
 * delete DerivedData
 * delete Archives
 * delete Caches
+* check disck space
