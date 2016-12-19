@@ -14,6 +14,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var commandSelectButton: NSPopUpButton!
     @IBOutlet weak var executeCommandButton: NSButton!
     
+    let EnterKeyCode: UInt16 = 36
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -88,8 +90,7 @@ class ViewController: NSViewController {
     }
     
     override func keyDown(with theEvent: NSEvent) {
-        if (theEvent.keyCode == 36) {
-            // press Enter key
+        if (theEvent.keyCode == EnterKeyCode) {
             showConfirmAlert()
         }
     }
