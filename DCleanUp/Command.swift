@@ -13,17 +13,25 @@ class Command {
     func execute(type: CommandType) -> Int {
         if let path = Bundle.main.path(forResource: type.scriptFileName, ofType:"scpt") {
             let task = Process()
-            let pipe = Pipe()
-            task.standardOutput = pipe
             NotificationCenter.default.addObserver(self, selector: #selector(readComplete), name: NSNotification.Name.NSFileHandleReadToEndOfFileCompletion, object: nil)
-            pipe.fileHandleForReading.readToEndOfFileInBackgroundAndNotify()
             
             task.launchPath = "/usr/bin/osascript"
             task.arguments = [path]
+            
+            let pipe = Pipe()
+            
+            pipe.fileHandleForReading.readToEndOfFileInBackgroundAndNotify()
+            task.standardOutput = pipe
             task.launch()
             task.waitUntilExit()
             
-            print(Int(task.terminationStatus))
+            
+            let handle = pipe.fileHandleForReading
+            let data = handle.readDataToEndOfFile()
+            if let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                print(result)
+            }
+            
             return Int(task.terminationStatus)
         }
         return 1
@@ -31,6 +39,8 @@ class Command {
     
     @objc func readComplete(notification: Notification) {
         print(notification)
+        print(notification.object)
+        let handler = notification.object as! FileHandle
         NotificationCenter.default.removeObserver(self, name: Notification.Name.NSFileHandleReadToEndOfFileCompletion, object: nil)
     }
 }
