@@ -39,8 +39,6 @@ class Command {
     
     @objc func readComplete(notification: Notification) {
         print(notification)
-        print(notification.object)
-        let handler = notification.object as! FileHandle
         NotificationCenter.default.removeObserver(self, name: Notification.Name.NSFileHandleReadToEndOfFileCompletion, object: nil)
     }
 }
